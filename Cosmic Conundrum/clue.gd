@@ -1,26 +1,21 @@
+tool
 extends Control
 
+export var id = 0
+export var rule = "right"
+export var revealed = true
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _process(_delta):
+	$Sign.disabled = revealed
+	$Line.visible = revealed
+	$Rule.disabled = revealed
+	$Sign.texture_disabled = load("res://assets/" + str(id + 1) + ".png")
+	$Rule.texture_disabled = load("res://assets/clue-" + rule + ".png")
 
 
 func _on_rule_pressed():
 	if $Sign.pressed:
-		$Sign.disabled = true
-		$Rule.disabled = true
-		$Line.visible = true
+		revealed = true
 	else:
 		for clue in $"..".get_children():
 			if clue.get_node("Sign").pressed:

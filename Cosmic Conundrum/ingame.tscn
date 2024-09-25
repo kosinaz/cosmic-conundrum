@@ -1,10 +1,8 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://card.tscn" type="PackedScene" id=1]
 [ext_resource path="res://ingame.gd" type="Script" id=2]
-[ext_resource path="res://level1/clues/clue3.tscn" type="PackedScene" id=3]
-[ext_resource path="res://level1/clues/clue1.tscn" type="PackedScene" id=4]
-[ext_resource path="res://level1/clues/clue2.tscn" type="PackedScene" id=5]
+[ext_resource path="res://clue.tscn" type="PackedScene" id=3]
 
 [sub_resource type="Gradient" id=1]
 interpolation_mode = 2
@@ -29,25 +27,39 @@ stretch_mode = 1
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="Clue" parent="ClueContainer" instance=ExtResource( 4 )]
-margin_left = 290.0
-margin_right = 460.0
+[node name="Clue" parent="ClueContainer" instance=ExtResource( 3 )]
+margin_left = 407.0
+margin_top = 46.0
+margin_right = 567.0
+margin_bottom = 126.0
+revealed = false
 
-[node name="Clue2" parent="ClueContainer" instance=ExtResource( 5 )]
-margin_left = 410.0
-margin_top = 60.0
-margin_right = 580.0
-margin_bottom = 110.0
+[node name="Clue2" parent="ClueContainer" instance=ExtResource( 3 )]
+margin_left = 327.0
+margin_top = 126.0
+margin_right = 487.0
+margin_bottom = 206.0
+id = 1
+rule = "left"
+revealed = false
 
 [node name="Clue3" parent="ClueContainer" instance=ExtResource( 3 )]
-margin_left = 650.0
-margin_right = 820.0
+margin_left = 567.0
+margin_top = 126.0
+margin_right = 727.0
+margin_bottom = 206.0
+id = 2
+rule = "middle"
+revealed = false
 
 [node name="CardContainer" type="MarginContainer" parent="."]
+anchor_left = 0.5
 anchor_top = 1.0
-anchor_right = 1.0
+anchor_right = 0.5
 anchor_bottom = 1.0
+margin_left = -512.0
 margin_top = -290.0
+margin_right = 512.0
 custom_constants/margin_right = 10
 custom_constants/margin_top = 10
 custom_constants/margin_left = 10
@@ -59,17 +71,18 @@ margin_left = 10.0
 margin_top = 10.0
 margin_right = 1014.0
 margin_bottom = 280.0
+custom_constants/separation = 10
 alignment = 1
 
 [node name="Card" parent="CardContainer/Cards" instance=ExtResource( 1 )]
-margin_left = 119.0
-margin_right = 269.0
+margin_left = 107.0
+margin_right = 257.0
 margin_bottom = 270.0
 id = 1
 
 [node name="Card2" parent="CardContainer/Cards" instance=ExtResource( 1 )]
-margin_left = 273.0
-margin_right = 423.0
+margin_left = 267.0
+margin_right = 417.0
 margin_bottom = 270.0
 id = 4
 front = false
@@ -81,12 +94,12 @@ margin_bottom = 270.0
 id = 2
 
 [node name="Card4" parent="CardContainer/Cards" instance=ExtResource( 1 )]
-margin_left = 581.0
-margin_right = 731.0
+margin_left = 587.0
+margin_right = 737.0
 margin_bottom = 270.0
 id = 3
 
 [node name="Card5" parent="CardContainer/Cards" instance=ExtResource( 1 )]
-margin_left = 735.0
-margin_right = 885.0
+margin_left = 747.0
+margin_right = 897.0
 margin_bottom = 270.0

@@ -2,15 +2,23 @@ tool
 extends Control
 
 export var id = 0
+export var direction = 0
 export var rule = "right"
 export var revealed = true
 
 func _process(_delta):
+	for i in range(2):
+		if i == direction:
+			continue
+		get_node("Line" + str(i)).visible = false
+		get_node("Rule" + str(i)).visible = false
+		get_node("Rule" + str(i)).disabled = false
 	$Sign.disabled = revealed
-	$Line.visible = revealed
-	$Rule.disabled = revealed
+	get_node("Line" + str(direction)).visible = revealed
+	get_node("Rule" + str(direction)).visible = true
+	get_node("Rule" + str(direction)).disabled = revealed
 	$Sign.texture_disabled = load("res://assets/" + str(id + 1) + ".png")
-	$Rule.texture_disabled = load("res://assets/clue-" + rule + ".png")
+	get_node("Rule" + str(direction)).texture_disabled = load("res://assets/clue-" + rule + ".png")
 
 
 func _on_rule_pressed():

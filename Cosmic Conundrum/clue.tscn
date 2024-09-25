@@ -10,9 +10,10 @@
 [node name="Clue" type="Control"]
 margin_left = 310.0
 margin_top = 180.0
-margin_right = 470.0
+margin_right = 390.0
 margin_bottom = 260.0
 script = ExtResource( 1 )
+revealed = false
 
 [node name="Sign" type="TextureButton" parent="."]
 margin_right = 50.0
@@ -23,7 +24,8 @@ texture_pressed = ExtResource( 6 )
 texture_disabled = ExtResource( 2 )
 expand = true
 
-[node name="Line" type="TextureRect" parent="."]
+[node name="Line0" type="TextureRect" parent="."]
+visible = false
 margin_left = 40.0
 margin_top = 20.0
 margin_right = 85.0
@@ -32,7 +34,29 @@ rect_min_size = Vector2( 45, 10 )
 texture = ExtResource( 3 )
 expand = true
 
-[node name="Rule" type="TextureButton" parent="."]
+[node name="Line1" type="TextureRect" parent="."]
+visible = false
+margin_left = 40.0
+margin_top = 34.0
+margin_right = 120.0
+margin_bottom = 44.0
+rect_min_size = Vector2( 45, 10 )
+rect_rotation = 45.0
+texture = ExtResource( 3 )
+expand = true
+
+[node name="Line2" type="TextureRect" parent="."]
+visible = false
+margin_left = 30.0
+margin_top = 40.0
+margin_right = 75.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 45, 10 )
+rect_rotation = 90.0
+texture = ExtResource( 3 )
+expand = true
+
+[node name="Rule0" type="TextureButton" parent="."]
 margin_left = 80.0
 margin_right = 130.0
 margin_bottom = 50.0
@@ -41,5 +65,29 @@ texture_pressed = ExtResource( 6 )
 texture_disabled = ExtResource( 4 )
 expand = true
 
+[node name="Rule1" type="TextureButton" parent="."]
+visible = false
+margin_left = 80.0
+margin_top = 80.0
+margin_right = 130.0
+margin_bottom = 130.0
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 6 )
+texture_disabled = ExtResource( 4 )
+expand = true
+
+[node name="Rule2" type="TextureButton" parent="."]
+visible = false
+margin_top = 80.0
+margin_right = 50.0
+margin_bottom = 130.0
+disabled = true
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 6 )
+texture_disabled = ExtResource( 4 )
+expand = true
+
 [connection signal="pressed" from="Sign" to="." method="_on_sign_pressed"]
-[connection signal="pressed" from="Rule" to="." method="_on_rule_pressed"]
+[connection signal="pressed" from="Rule0" to="." method="_on_rule_pressed"]
+[connection signal="pressed" from="Rule1" to="." method="_on_rule_pressed"]
+[connection signal="pressed" from="Rule2" to="." method="_on_rule_pressed"]

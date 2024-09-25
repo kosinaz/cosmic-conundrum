@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://card.tscn" type="PackedScene" id=1]
 [ext_resource path="res://level.gd" type="Script" id=2]
 [ext_resource path="res://clue.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/next.png" type="Texture" id=4]
 
 [sub_resource type="Gradient" id=1]
 interpolation_mode = 2
@@ -14,7 +15,7 @@ gradient = SubResource( 1 )
 fill_from = Vector2( 0, 0.00833333 )
 fill_to = Vector2( 0, 1 )
 
-[node name="Ingame" type="Node"]
+[node name="Level1" type="Node"]
 script = ExtResource( 2 )
 
 [node name="Background" type="TextureRect" parent="."]
@@ -77,27 +78,42 @@ margin_left = 107.0
 margin_right = 257.0
 margin_bottom = 270.0
 id = 1
+front = true
 
 [node name="Card2" parent="CardContainer/Cards" instance=ExtResource( 1 )]
 margin_left = 267.0
 margin_right = 417.0
 margin_bottom = 270.0
-front = false
+direction = 1
 
 [node name="Card3" parent="CardContainer/Cards" instance=ExtResource( 1 )]
 margin_left = 427.0
 margin_right = 577.0
 margin_bottom = 270.0
 id = 4
+front = true
 
 [node name="Card4" parent="CardContainer/Cards" instance=ExtResource( 1 )]
 margin_left = 587.0
 margin_right = 737.0
 margin_bottom = 270.0
 id = 2
+front = true
 
 [node name="Card5" parent="CardContainer/Cards" instance=ExtResource( 1 )]
 margin_left = 747.0
 margin_right = 897.0
 margin_bottom = 270.0
 id = 3
+front = true
+
+[node name="NextButton" type="TextureButton" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -100.0
+margin_top = 25.0
+margin_right = -25.0
+margin_bottom = 100.0
+texture_normal = ExtResource( 4 )
+
+[connection signal="pressed" from="NextButton" to="." method="_on_next_button_pressed"]

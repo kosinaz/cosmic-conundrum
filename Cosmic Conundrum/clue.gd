@@ -21,3 +21,13 @@ func _on_rule_pressed():
 		$Sign.disabled = true
 		$Rule.disabled = true
 		$Line.visible = true
+	else:
+		for clue in $"..".get_children():
+			if clue.get_node("Sign").pressed:
+				clue.get_node("Sign").pressed = false
+
+
+func _on_sign_pressed():
+	for clue in $"..".get_children():
+		if clue.get_node("Sign").pressed and not clue == self:
+			clue.get_node("Sign").pressed = false

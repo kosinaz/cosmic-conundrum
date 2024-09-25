@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://clue.gd" type="Script" id=1]
-[ext_resource path="res://assets/1.png" type="Texture" id=2]
+[ext_resource path="res://assets/clue-left.png" type="Texture" id=2]
 [ext_resource path="res://assets/line.png" type="Texture" id=3]
-[ext_resource path="res://assets/clue-right.png" type="Texture" id=4]
+[ext_resource path="res://assets/2.png" type="Texture" id=4]
 [ext_resource path="res://assets/circle.png" type="Texture" id=5]
 [ext_resource path="res://assets/circle-on.png" type="Texture" id=6]
 
@@ -20,7 +20,7 @@ margin_bottom = 50.0
 toggle_mode = true
 texture_normal = ExtResource( 5 )
 texture_pressed = ExtResource( 6 )
-texture_disabled = ExtResource( 2 )
+texture_disabled = ExtResource( 4 )
 expand = true
 
 [node name="Line" type="TextureRect" parent="."]
@@ -39,7 +39,7 @@ margin_right = 170.0
 margin_bottom = 50.0
 texture_normal = ExtResource( 5 )
 texture_pressed = ExtResource( 6 )
-texture_disabled = ExtResource( 4 )
+texture_disabled = ExtResource( 2 )
 expand = true
 
 [connection signal="pressed" from="Sign" to="." method="_on_sign_pressed"]

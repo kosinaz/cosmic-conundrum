@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://assets/card.tscn" type="PackedScene" id=1]
+[ext_resource path="res://card.tscn" type="PackedScene" id=1]
 [ext_resource path="res://ingame.gd" type="Script" id=2]
-[ext_resource path="res://clue.tscn" type="PackedScene" id=3]
+[ext_resource path="res://level1/clues/clue3.tscn" type="PackedScene" id=3]
+[ext_resource path="res://level1/clues/clue1.tscn" type="PackedScene" id=4]
+[ext_resource path="res://level1/clues/clue2.tscn" type="PackedScene" id=5]
 
 [sub_resource type="Gradient" id=1]
 interpolation_mode = 2
@@ -23,21 +25,23 @@ anchor_bottom = 1.0
 texture = SubResource( 2 )
 stretch_mode = 1
 
-[node name="SignContainer" type="Control" parent="."]
+[node name="ClueContainer" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="Clue" parent="SignContainer" instance=ExtResource( 3 )]
+[node name="Clue" parent="ClueContainer" instance=ExtResource( 4 )]
+margin_left = 290.0
+margin_right = 460.0
 
-[node name="Clue2" parent="SignContainer" instance=ExtResource( 3 )]
-margin_left = 430.0
+[node name="Clue2" parent="ClueContainer" instance=ExtResource( 5 )]
+margin_left = 410.0
 margin_top = 60.0
-margin_right = 600.0
+margin_right = 580.0
 margin_bottom = 110.0
 
-[node name="Clue3" parent="SignContainer" instance=ExtResource( 3 )]
-margin_left = 670.0
-margin_right = 840.0
+[node name="Clue3" parent="ClueContainer" instance=ExtResource( 3 )]
+margin_left = 650.0
+margin_right = 820.0
 
 [node name="CardContainer" type="MarginContainer" parent="."]
 anchor_top = 1.0
@@ -49,44 +53,40 @@ custom_constants/margin_top = 10
 custom_constants/margin_left = 10
 custom_constants/margin_bottom = 10
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CardContainer"]
+[node name="Cards" type="HBoxContainer" parent="CardContainer"]
+unique_name_in_owner = true
 margin_left = 10.0
 margin_top = 10.0
 margin_right = 1014.0
 margin_bottom = 280.0
 alignment = 1
 
-[node name="Card" parent="CardContainer/HBoxContainer" instance=ExtResource( 1 )]
-unique_name_in_owner = true
+[node name="Card" parent="CardContainer/Cards" instance=ExtResource( 1 )]
 margin_left = 119.0
 margin_right = 269.0
 margin_bottom = 270.0
+id = 1
 
-[node name="Card2" parent="CardContainer/HBoxContainer" instance=ExtResource( 1 )]
-unique_name_in_owner = true
+[node name="Card2" parent="CardContainer/Cards" instance=ExtResource( 1 )]
 margin_left = 273.0
 margin_right = 423.0
 margin_bottom = 270.0
+id = 4
+front = false
 
-[node name="Front" parent="CardContainer/HBoxContainer/Card2" index="1"]
-visible = false
-
-[node name="Card3" parent="CardContainer/HBoxContainer" instance=ExtResource( 1 )]
-unique_name_in_owner = true
+[node name="Card3" parent="CardContainer/Cards" instance=ExtResource( 1 )]
 margin_left = 427.0
 margin_right = 577.0
 margin_bottom = 270.0
+id = 2
 
-[node name="Card4" parent="CardContainer/HBoxContainer" instance=ExtResource( 1 )]
-unique_name_in_owner = true
+[node name="Card4" parent="CardContainer/Cards" instance=ExtResource( 1 )]
 margin_left = 581.0
 margin_right = 731.0
 margin_bottom = 270.0
+id = 3
 
-[node name="Card5" parent="CardContainer/HBoxContainer" instance=ExtResource( 1 )]
-unique_name_in_owner = true
+[node name="Card5" parent="CardContainer/Cards" instance=ExtResource( 1 )]
 margin_left = 735.0
 margin_right = 885.0
 margin_bottom = 270.0
-
-[editable path="CardContainer/HBoxContainer/Card2"]

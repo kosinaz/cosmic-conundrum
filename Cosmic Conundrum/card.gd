@@ -13,7 +13,6 @@ func _process(_delta):
 	else:
 		$"%Line".show()
 		$"%Line".texture = load("res://assets/line" + str(direction - 1) + ".png")
-	
 
 func _on_sign_pressed(pressed_id):
 	if pressed_id == id:

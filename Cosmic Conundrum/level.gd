@@ -1,5 +1,7 @@
 extends Node
 
+var current_clue = null
+
 func _process(_delta):
 	var cards = $"%Cards".get_children()
 	var won = true
@@ -12,6 +14,11 @@ func _process(_delta):
 		else:
 			won = false
 	$NextButton.visible = won
+
+
+func set_current_clue(clue):
+	current_clue.reset()
+	current_clue = clue
 
 
 func _on_next_button_pressed():

@@ -123,6 +123,10 @@ margin_right = -25.0
 margin_bottom = 100.0
 texture_normal = ExtResource( 4 )
 
+[node name="Label" type="Label" parent="."]
+margin_right = 40.0
+margin_bottom = 14.0
+
 [connection signal="pressed" from="ClueContainer/Clue" to="." method="_on_clue_pressed"]
 [connection signal="pressed" from="ClueContainer/Clue2" to="." method="_on_clue_pressed"]
 [connection signal="pressed" from="ClueContainer/Clue3" to="." method="_on_clue_pressed"]

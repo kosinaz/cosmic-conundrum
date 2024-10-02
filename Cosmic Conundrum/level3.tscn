@@ -159,3 +159,4 @@ texture_normal = ExtResource( 5 )
 [connection signal="pressed" from="ClueContainer/Decoy" to="." method="_on_clue_pressed"]
 [connection signal="pressed" from="ClueContainer/Decoy2" to="." method="_on_clue_pressed"]
 [connection signal="pressed" from="ClueContainer/Decoy3" to="." method="_on_clue_pressed"]
+[connection signal="pressed" from="NextButton" to="." method="_on_next_button_pressed"]

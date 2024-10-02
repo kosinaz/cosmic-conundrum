@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://card.tscn" type="PackedScene" id=1]
 [ext_resource path="res://level.gd" type="Script" id=2]
@@ -8,9 +8,8 @@
 [ext_resource path="res://assets/clue-left-to.png" type="Texture" id=6]
 [ext_resource path="res://assets/5.png" type="Texture" id=7]
 [ext_resource path="res://assets/6.png" type="Texture" id=8]
-[ext_resource path="res://assets/clue-left.png" type="Texture" id=9]
-[ext_resource path="res://assets/clue-right.png" type="Texture" id=10]
-[ext_resource path="res://assets/4.png" type="Texture" id=11]
+[ext_resource path="res://assets/clue-right-to.png" type="Texture" id=9]
+[ext_resource path="res://assets/9.png" type="Texture" id=10]
 [ext_resource path="res://assets/8.png" type="Texture" id=12]
 [ext_resource path="res://assets/clue-not.png" type="Texture" id=13]
 
@@ -24,7 +23,7 @@ gradient = SubResource( 1 )
 fill_from = Vector2( 0, 0.00833333 )
 fill_to = Vector2( 0, 1 )
 
-[node name="Level4" type="Node"]
+[node name="Level5" type="Node"]
 script = ExtResource( 2 )
 
 [node name="Background" type="TextureRect" parent="."]
@@ -38,57 +37,82 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="Clue" parent="ClueContainer" instance=ExtResource( 3 )]
-margin_left = 487.0
-margin_top = 126.0
-margin_right = 567.0
-margin_bottom = 206.0
-sign_0_0 = ExtResource( 11 )
-sign_1_0 = ExtResource( 6 )
-sign_2_1 = ExtResource( 8 )
-
-[node name="Clue2" parent="ClueContainer" instance=ExtResource( 3 )]
-margin_left = 247.0
-margin_top = 46.0
-margin_right = 327.0
-margin_bottom = 126.0
-sign_0_0 = ExtResource( 13 )
-sign_1_1 = ExtResource( 12 )
-sign_2_1 = ExtResource( 10 )
-
-[node name="Clue3" parent="ClueContainer" instance=ExtResource( 3 )]
-margin_left = 647.0
-margin_top = 46.0
-margin_right = 727.0
-margin_bottom = 126.0
-sign_0_0 = ExtResource( 13 )
-sign_1_1 = ExtResource( 12 )
-sign_2_1 = ExtResource( 9 )
-
-[node name="Clue4" parent="ClueContainer" instance=ExtResource( 3 )]
-margin_left = 247.0
-margin_top = 126.0
-margin_right = 327.0
-margin_bottom = 206.0
-sign_0_0 = ExtResource( 7 )
-sign_0_1 = ExtResource( 9 )
-
-[node name="Decoy" parent="ClueContainer" instance=ExtResource( 4 )]
 margin_left = 167.0
 margin_top = 126.0
 margin_right = 247.0
 margin_bottom = 206.0
+sign_0_0 = ExtResource( 13 )
+sign_1_0 = ExtResource( 12 )
+sign_2_0 = ExtResource( 9 )
+sign_2_1 = ExtResource( 8 )
+
+[node name="Clue2" parent="ClueContainer" instance=ExtResource( 3 )]
+margin_left = 407.0
+margin_top = 46.0
+margin_right = 487.0
+margin_bottom = 126.0
+sign_0_0 = ExtResource( 13 )
+sign_1_0 = ExtResource( 8 )
+sign_1_1 = ExtResource( 6 )
+sign_2_1 = ExtResource( 10 )
+
+[node name="Clue3" parent="ClueContainer" instance=ExtResource( 3 )]
+margin_left = 727.0
+margin_top = 46.0
+margin_right = 807.0
+margin_bottom = 126.0
+sign_0_0 = ExtResource( 13 )
+sign_0_1 = ExtResource( 8 )
+sign_1_1 = ExtResource( 9 )
+sign_2_1 = ExtResource( 7 )
+
+[node name="Decoy" parent="ClueContainer" instance=ExtResource( 4 )]
+margin_left = 487.0
+margin_top = 206.0
+margin_right = 567.0
+margin_bottom = 286.0
 
 [node name="Decoy2" parent="ClueContainer" instance=ExtResource( 4 )]
+margin_left = 647.0
+margin_top = 206.0
+margin_right = 727.0
+margin_bottom = 286.0
+
+[node name="Decoy3" parent="ClueContainer" instance=ExtResource( 4 )]
+margin_left = 247.0
+margin_top = 46.0
+margin_right = 327.0
+margin_bottom = 126.0
+
+[node name="Decoy4" parent="ClueContainer" instance=ExtResource( 4 )]
+margin_left = 167.0
+margin_top = 206.0
+margin_right = 247.0
+margin_bottom = 286.0
+
+[node name="Decoy5" parent="ClueContainer" instance=ExtResource( 4 )]
+margin_left = 87.0
+margin_top = 126.0
+margin_right = 167.0
+margin_bottom = 206.0
+
+[node name="Decoy6" parent="ClueContainer" instance=ExtResource( 4 )]
 margin_left = 87.0
 margin_top = 206.0
 margin_right = 167.0
 margin_bottom = 286.0
 
-[node name="Decoy3" parent="ClueContainer" instance=ExtResource( 4 )]
-margin_left = 887.0
-margin_top = 126.0
-margin_right = 967.0
-margin_bottom = 206.0
+[node name="Decoy7" parent="ClueContainer" instance=ExtResource( 4 )]
+margin_left = 727.0
+margin_top = 206.0
+margin_right = 807.0
+margin_bottom = 286.0
+
+[node name="Decoy8" parent="ClueContainer" instance=ExtResource( 4 )]
+margin_left = 807.0
+margin_top = 206.0
+margin_right = 887.0
+margin_bottom = 286.0
 
 [node name="CardContainer" type="MarginContainer" parent="."]
 anchor_left = 0.5
@@ -116,43 +140,42 @@ alignment = 1
 margin_left = 107.0
 margin_right = 257.0
 margin_bottom = 270.0
-id = 4
-start_id = 3
-front = true
+id = 8
+start_id = 4
+direction = 8
 
 [node name="Card2" parent="CardContainer/Cards" instance=ExtResource( 1 )]
 margin_left = 267.0
 margin_right = 417.0
 margin_bottom = 270.0
-id = 5
-start_id = 3
-direction = 7
+id = 6
+start_id = 4
 front = true
 
 [node name="Card3" parent="CardContainer/Cards" instance=ExtResource( 1 )]
 margin_left = 427.0
 margin_right = 577.0
 margin_bottom = 270.0
-id = 3
-start_id = 3
-direction = 6
+id = 5
+start_id = 4
+direction = 10
+front = true
 
 [node name="Card4" parent="CardContainer/Cards" instance=ExtResource( 1 )]
 margin_left = 587.0
 margin_right = 737.0
 margin_bottom = 270.0
 id = 7
-start_id = 3
-direction = 3
+start_id = 4
 front = true
 
 [node name="Card5" parent="CardContainer/Cards" instance=ExtResource( 1 )]
 margin_left = 747.0
 margin_right = 897.0
 margin_bottom = 270.0
-id = 6
-start_id = 3
-front = true
+id = 4
+start_id = 4
+direction = 9
 
 [node name="NextButton" type="TextureButton" parent="."]
 anchor_left = 1.0
@@ -166,8 +189,11 @@ texture_normal = ExtResource( 5 )
 [connection signal="pressed" from="ClueContainer/Clue" to="." method="_on_clue_pressed"]
 [connection signal="pressed" from="ClueContainer/Clue2" to="." method="_on_clue_pressed"]
 [connection signal="pressed" from="ClueContainer/Clue3" to="." method="_on_clue_pressed"]
-[connection signal="pressed" from="ClueContainer/Clue4" to="." method="_on_clue_pressed"]
 [connection signal="pressed" from="ClueContainer/Decoy" to="." method="_on_clue_pressed"]
 [connection signal="pressed" from="ClueContainer/Decoy2" to="." method="_on_clue_pressed"]
 [connection signal="pressed" from="ClueContainer/Decoy3" to="." method="_on_clue_pressed"]
-[connection signal="pressed" from="NextButton" to="." method="_on_next_button_pressed"]
+[connection signal="pressed" from="ClueContainer/Decoy4" to="." method="_on_clue_pressed"]
+[connection signal="pressed" from="ClueContainer/Decoy5" to="." method="_on_clue_pressed"]
+[connection signal="pressed" from="ClueContainer/Decoy6" to="." method="_on_clue_pressed"]
+[connection signal="pressed" from="ClueContainer/Decoy7" to="." method="_on_clue_pressed"]
+[connection signal="pressed" from="ClueContainer/Decoy8" to="." method="_on_clue_pressed"]

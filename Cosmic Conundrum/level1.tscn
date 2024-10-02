@@ -1,9 +1,15 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://card.tscn" type="PackedScene" id=1]
 [ext_resource path="res://level.gd" type="Script" id=2]
 [ext_resource path="res://clue.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/next.png" type="Texture" id=4]
+[ext_resource path="res://assets/clue-middle.png" type="Texture" id=5]
+[ext_resource path="res://assets/clue-right.png" type="Texture" id=6]
+[ext_resource path="res://assets/clue-left.png" type="Texture" id=7]
+[ext_resource path="res://assets/5.png" type="Texture" id=8]
+[ext_resource path="res://assets/2.png" type="Texture" id=9]
+[ext_resource path="res://assets/4.png" type="Texture" id=10]
 
 [sub_resource type="Gradient" id=1]
 interpolation_mode = 2
@@ -33,27 +39,24 @@ margin_left = 407.0
 margin_top = 46.0
 margin_right = 487.0
 margin_bottom = 126.0
-sign_0_0 = null
-sign_1_0 = null
-sign_2_1 = null
+sign_0_0 = ExtResource( 9 )
+sign_1_0 = ExtResource( 7 )
 
 [node name="Clue2" parent="ClueContainer" instance=ExtResource( 3 )]
 margin_left = 327.0
 margin_top = 126.0
 margin_right = 407.0
 margin_bottom = 206.0
-sign_0_0 = null
-sign_1_0 = null
-sign_2_1 = null
+sign_0_0 = ExtResource( 10 )
+sign_1_0 = ExtResource( 6 )
 
 [node name="Clue3" parent="ClueContainer" instance=ExtResource( 3 )]
 margin_left = 567.0
 margin_top = 126.0
 margin_right = 647.0
 margin_bottom = 206.0
-sign_0_0 = null
-sign_1_0 = null
-sign_2_1 = null
+sign_0_0 = ExtResource( 8 )
+sign_1_0 = ExtResource( 5 )
 
 [node name="CardContainer" type="MarginContainer" parent="."]
 anchor_left = 0.5
@@ -120,4 +123,7 @@ margin_right = -25.0
 margin_bottom = 100.0
 texture_normal = ExtResource( 4 )
 
+[connection signal="pressed" from="ClueContainer/Clue" to="." method="_on_clue_pressed"]
+[connection signal="pressed" from="ClueContainer/Clue2" to="." method="_on_clue_pressed"]
+[connection signal="pressed" from="ClueContainer/Clue3" to="." method="_on_clue_pressed"]
 [connection signal="pressed" from="NextButton" to="." method="_on_next_button_pressed"]

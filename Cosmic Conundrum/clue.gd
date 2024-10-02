@@ -83,6 +83,8 @@ func set_signs():
 		signs.append($"%Sign21")
 
 func reset():
+	if revealed:
+		return
 	for child in $Lines.get_children():
 		child.visible = false
 	for current_sign in $Signs.get_children():
@@ -106,35 +108,3 @@ func _on_sign_pressed(xy):
 			set_revealed(true)
 	else:
 		reset()
-
-
-#func _on_rule_pressed():
-#	if $Sign.pressed:
-#		if not [3, 4].has(direction):
-#			revealed = true
-#	else:
-#		for clue in $"..".get_children():
-#			clue.get_node("Sign").pressed = false
-#			if clue.has_node("Rule3"):
-#				clue.get_node("Rule3").pressed = false
-#				clue.get_node("Rule4").pressed = false
-#
-#
-#func _on_sign_pressed():
-#	for clue in $"..".get_children():
-#		if clue.get_node("Sign").pressed and not clue == self:
-#			clue.get_node("Sign").pressed = false
-#		if clue.has_node("Rule3") and not clue == self:
-#			clue.get_node("Rule3").pressed = false
-#			clue.get_node("Rule4").pressed = false
-#
-#
-#func _on_sign2_pressed():
-#	if $Sign.pressed and get_node("Rule" + str(direction)).pressed:
-#		revealed = true
-#	else:
-#		for clue in $"..".get_children():
-#			clue.get_node("Sign").pressed = false
-#			if clue.has_node("Rule3"):
-#				clue.get_node("Rule3").pressed = false
-#				clue.get_node("Rule4").pressed = false

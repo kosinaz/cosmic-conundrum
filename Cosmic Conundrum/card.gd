@@ -2,6 +2,7 @@ tool
 extends CenterContainer
 
 export var id = 0
+export var start_id = 0
 export var direction = 0
 export var front = true
 
@@ -13,9 +14,11 @@ func _process(_delta):
 	else:
 		$"%Line".show()
 		$"%Line".texture = load("res://assets/line" + str(direction - 1) + ".png")
+	for i in range(5):
+		get_node("%Sign" + str(i)).texture_normal = load("res://assets/" + str(i + start_id + 1) + ".png")
 
 func _on_sign_pressed(pressed_id):
-	if pressed_id == id:
+	if pressed_id + start_id == id:
 		front = false
 	else:
 		get_node("%Sign" + str(pressed_id)).disabled = true

@@ -56,9 +56,10 @@ stretch_mode = 6
 
 [node name="Line" type="TextureRect" parent="Back/Clue"]
 unique_name_in_owner = true
-margin_left = 50.0
+visible = false
+margin_left = 35.0
 margin_top = 200.0
-margin_right = 100.0
+margin_right = 115.0
 margin_bottom = 250.0
 texture = ExtResource( 4 )
 expand = true

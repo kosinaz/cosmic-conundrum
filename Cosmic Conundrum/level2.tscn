@@ -1,10 +1,16 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://card.tscn" type="PackedScene" id=1]
 [ext_resource path="res://level.gd" type="Script" id=2]
 [ext_resource path="res://clue.tscn" type="PackedScene" id=3]
 [ext_resource path="res://decoy.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/next.png" type="Texture" id=5]
+[ext_resource path="res://assets/clue-right.png" type="Texture" id=6]
+[ext_resource path="res://assets/4.png" type="Texture" id=7]
+[ext_resource path="res://assets/clue-middle.png" type="Texture" id=8]
+[ext_resource path="res://assets/clue-left.png" type="Texture" id=9]
+[ext_resource path="res://assets/5.png" type="Texture" id=10]
+[ext_resource path="res://assets/6.png" type="Texture" id=11]
 
 [sub_resource type="Gradient" id=1]
 interpolation_mode = 2
@@ -34,25 +40,24 @@ margin_left = 407.0
 margin_top = 46.0
 margin_right = 487.0
 margin_bottom = 126.0
-id = 4
-direction = 1
-rule = "left"
+sign_0_0 = ExtResource( 10 )
+sign_1_1 = ExtResource( 9 )
 
 [node name="Clue2" parent="ClueContainer" instance=ExtResource( 3 )]
 margin_left = 327.0
 margin_top = 126.0
 margin_right = 407.0
 margin_bottom = 206.0
-direction = 1
-rule = "middle"
+sign_0_0 = ExtResource( 11 )
+sign_1_1 = ExtResource( 8 )
 
 [node name="Clue3" parent="ClueContainer" instance=ExtResource( 3 )]
 margin_left = 567.0
 margin_top = 126.0
 margin_right = 647.0
 margin_bottom = 206.0
-id = 3
-direction = 2
+sign_0_0 = ExtResource( 7 )
+sign_0_1 = ExtResource( 6 )
 
 [node name="Decoy" parent="ClueContainer" instance=ExtResource( 4 )]
 margin_left = 647.0
@@ -99,6 +104,7 @@ margin_left = 107.0
 margin_right = 257.0
 margin_bottom = 270.0
 id = 4
+start_id = 1
 front = true
 
 [node name="Card2" parent="CardContainer/Cards" instance=ExtResource( 1 )]
@@ -106,12 +112,15 @@ margin_left = 267.0
 margin_right = 417.0
 margin_bottom = 270.0
 id = 2
+start_id = 1
 front = true
 
 [node name="Card3" parent="CardContainer/Cards" instance=ExtResource( 1 )]
 margin_left = 427.0
 margin_right = 577.0
 margin_bottom = 270.0
+id = 5
+start_id = 1
 front = true
 
 [node name="Card4" parent="CardContainer/Cards" instance=ExtResource( 1 )]
@@ -119,6 +128,7 @@ margin_left = 587.0
 margin_right = 737.0
 margin_bottom = 270.0
 id = 1
+start_id = 1
 direction = 3
 
 [node name="Card5" parent="CardContainer/Cards" instance=ExtResource( 1 )]
@@ -126,6 +136,7 @@ margin_left = 747.0
 margin_right = 897.0
 margin_bottom = 270.0
 id = 3
+start_id = 1
 direction = 2
 front = true
 
@@ -138,4 +149,10 @@ margin_right = -25.0
 margin_bottom = 100.0
 texture_normal = ExtResource( 5 )
 
+[connection signal="pressed" from="ClueContainer/Clue" to="." method="_on_clue_pressed"]
+[connection signal="pressed" from="ClueContainer/Clue2" to="." method="_on_clue_pressed"]
+[connection signal="pressed" from="ClueContainer/Clue3" to="." method="_on_clue_pressed"]
+[connection signal="pressed" from="ClueContainer/Decoy" to="." method="_on_clue_pressed"]
+[connection signal="pressed" from="ClueContainer/Decoy2" to="." method="_on_clue_pressed"]
+[connection signal="pressed" from="ClueContainer/Decoy3" to="." method="_on_clue_pressed"]
 [connection signal="pressed" from="NextButton" to="." method="_on_next_button_pressed"]

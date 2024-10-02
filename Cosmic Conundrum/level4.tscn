@@ -6,11 +6,11 @@
 [ext_resource path="res://decoy.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/next.png" type="Texture" id=5]
 [ext_resource path="res://assets/clue-left-to.png" type="Texture" id=6]
-[ext_resource path="res://assets/5.png" type="Texture" id=7]
+[ext_resource path="res://assets/10.png" type="Texture" id=7]
 [ext_resource path="res://assets/6.png" type="Texture" id=8]
 [ext_resource path="res://assets/clue-left.png" type="Texture" id=9]
 [ext_resource path="res://assets/clue-right.png" type="Texture" id=10]
-[ext_resource path="res://assets/4.png" type="Texture" id=11]
+[ext_resource path="res://assets/9.png" type="Texture" id=11]
 [ext_resource path="res://assets/8.png" type="Texture" id=12]
 [ext_resource path="res://assets/clue-not.png" type="Texture" id=13]
 
@@ -42,15 +42,17 @@ margin_left = 487.0
 margin_top = 126.0
 margin_right = 567.0
 margin_bottom = 206.0
-sign_0_0 = ExtResource( 11 )
+revealed = true
+sign_0_0 = ExtResource( 8 )
 sign_1_0 = ExtResource( 6 )
-sign_2_1 = ExtResource( 8 )
+sign_2_1 = ExtResource( 11 )
 
 [node name="Clue2" parent="ClueContainer" instance=ExtResource( 3 )]
 margin_left = 247.0
 margin_top = 46.0
 margin_right = 327.0
 margin_bottom = 126.0
+revealed = true
 sign_0_0 = ExtResource( 13 )
 sign_1_1 = ExtResource( 12 )
 sign_2_1 = ExtResource( 10 )
@@ -60,6 +62,7 @@ margin_left = 647.0
 margin_top = 46.0
 margin_right = 727.0
 margin_bottom = 126.0
+revealed = true
 sign_0_0 = ExtResource( 13 )
 sign_1_1 = ExtResource( 12 )
 sign_2_1 = ExtResource( 9 )
@@ -69,6 +72,7 @@ margin_left = 247.0
 margin_top = 126.0
 margin_right = 327.0
 margin_bottom = 206.0
+revealed = true
 sign_0_0 = ExtResource( 7 )
 sign_0_1 = ExtResource( 9 )
 
@@ -116,16 +120,16 @@ alignment = 1
 margin_left = 107.0
 margin_right = 257.0
 margin_bottom = 270.0
-id = 4
-start_id = 3
+id = 9
+start_id = 5
 front = true
 
 [node name="Card2" parent="CardContainer/Cards" instance=ExtResource( 1 )]
 margin_left = 267.0
 margin_right = 417.0
 margin_bottom = 270.0
-id = 5
-start_id = 3
+id = 8
+start_id = 5
 direction = 7
 front = true
 
@@ -133,8 +137,8 @@ front = true
 margin_left = 427.0
 margin_right = 577.0
 margin_bottom = 270.0
-id = 3
-start_id = 3
+id = 5
+start_id = 5
 direction = 6
 
 [node name="Card4" parent="CardContainer/Cards" instance=ExtResource( 1 )]
@@ -142,7 +146,7 @@ margin_left = 587.0
 margin_right = 737.0
 margin_bottom = 270.0
 id = 7
-start_id = 3
+start_id = 5
 direction = 3
 front = true
 
@@ -151,7 +155,7 @@ margin_left = 747.0
 margin_right = 897.0
 margin_bottom = 270.0
 id = 6
-start_id = 3
+start_id = 5
 front = true
 
 [node name="NextButton" type="TextureButton" parent="."]

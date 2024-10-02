@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://card.tscn" type="PackedScene" id=1]
 [ext_resource path="res://level.gd" type="Script" id=2]
@@ -13,6 +13,8 @@
 [ext_resource path="res://assets/9.png" type="Texture" id=11]
 [ext_resource path="res://assets/8.png" type="Texture" id=12]
 [ext_resource path="res://assets/clue-not.png" type="Texture" id=13]
+[ext_resource path="res://KaushanScript-Regular.ttf" type="DynamicFontData" id=14]
+[ext_resource path="res://assets/x.png" type="Texture" id=15]
 
 [sub_resource type="Gradient" id=1]
 interpolation_mode = 2
@@ -23,6 +25,10 @@ colors = PoolColorArray( 0, 0, 0, 1, 0, 0, 0, 1, 0.21648, 0.223464, 0, 1, 0.9687
 gradient = SubResource( 1 )
 fill_from = Vector2( 0, 0.00833333 )
 fill_to = Vector2( 0, 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 24
+font_data = ExtResource( 14 )
 
 [node name="Level4" type="Node"]
 script = ExtResource( 2 )
@@ -42,7 +48,6 @@ margin_left = 487.0
 margin_top = 126.0
 margin_right = 567.0
 margin_bottom = 206.0
-revealed = true
 sign_0_0 = ExtResource( 8 )
 sign_1_0 = ExtResource( 6 )
 sign_2_1 = ExtResource( 11 )
@@ -52,7 +57,6 @@ margin_left = 247.0
 margin_top = 46.0
 margin_right = 327.0
 margin_bottom = 126.0
-revealed = true
 sign_0_0 = ExtResource( 13 )
 sign_1_1 = ExtResource( 12 )
 sign_2_1 = ExtResource( 10 )
@@ -62,7 +66,6 @@ margin_left = 647.0
 margin_top = 46.0
 margin_right = 727.0
 margin_bottom = 126.0
-revealed = true
 sign_0_0 = ExtResource( 13 )
 sign_1_1 = ExtResource( 12 )
 sign_2_1 = ExtResource( 9 )
@@ -72,7 +75,6 @@ margin_left = 247.0
 margin_top = 126.0
 margin_right = 327.0
 margin_bottom = 206.0
-revealed = true
 sign_0_0 = ExtResource( 7 )
 sign_0_1 = ExtResource( 9 )
 
@@ -167,11 +169,47 @@ margin_right = -25.0
 margin_bottom = 100.0
 texture_normal = ExtResource( 5 )
 
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_left = 30.0
+margin_top = 30.0
+margin_right = 70.0
+margin_bottom = 70.0
+custom_constants/separation = 8
+
+[node name="Misses" type="Label" parent="HBoxContainer"]
+unique_name_in_owner = true
+margin_top = 2.0
+margin_right = 16.0
+margin_bottom = 38.0
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "0"
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+margin_left = 24.0
+margin_right = 59.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 35, 35 )
+texture = ExtResource( 15 )
+expand = true
+
+[connection signal="missed" from="ClueContainer/Clue" to="." method="_on_missed"]
 [connection signal="pressed" from="ClueContainer/Clue" to="." method="_on_clue_pressed"]
+[connection signal="missed" from="ClueContainer/Clue2" to="." method="_on_missed"]
 [connection signal="pressed" from="ClueContainer/Clue2" to="." method="_on_clue_pressed"]
+[connection signal="missed" from="ClueContainer/Clue3" to="." method="_on_missed"]
 [connection signal="pressed" from="ClueContainer/Clue3" to="." method="_on_clue_pressed"]
+[connection signal="missed" from="ClueContainer/Clue4" to="." method="_on_missed"]
 [connection signal="pressed" from="ClueContainer/Clue4" to="." method="_on_clue_pressed"]
+[connection signal="missed" from="ClueContainer/Decoy" to="." method="_on_missed"]
 [connection signal="pressed" from="ClueContainer/Decoy" to="." method="_on_clue_pressed"]
+[connection signal="missed" from="ClueContainer/Decoy2" to="." method="_on_missed"]
 [connection signal="pressed" from="ClueContainer/Decoy2" to="." method="_on_clue_pressed"]
+[connection signal="missed" from="ClueContainer/Decoy3" to="." method="_on_missed"]
 [connection signal="pressed" from="ClueContainer/Decoy3" to="." method="_on_clue_pressed"]
+[connection signal="missed" from="CardContainer/Cards/Card" to="." method="_on_missed"]
+[connection signal="missed" from="CardContainer/Cards/Card2" to="." method="_on_missed"]
+[connection signal="missed" from="CardContainer/Cards/Card3" to="." method="_on_missed"]
+[connection signal="missed" from="CardContainer/Cards/Card4" to="." method="_on_missed"]
+[connection signal="missed" from="CardContainer/Cards/Card5" to="." method="_on_missed"]
 [connection signal="pressed" from="NextButton" to="." method="_on_next_button_pressed"]

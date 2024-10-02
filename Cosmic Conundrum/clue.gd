@@ -2,6 +2,7 @@ tool
 extends Control
 
 signal pressed
+signal missed
 
 export var revealed = true setget set_revealed
 export var sign_0_0: Resource = null setget set_sign_0_0
@@ -101,6 +102,7 @@ func _on_sign_pressed(xy):
 	if i == 0:
 		if not get_node("%Sign" + xy).pressed:
 			reset()
+			emit_signal("missed")
 		return
 	if signs[i - 1].pressed:
 		set_line_to(i, true)
@@ -108,3 +110,4 @@ func _on_sign_pressed(xy):
 			set_revealed(true)
 	else:
 		reset()
+		emit_signal("missed")

@@ -1,6 +1,7 @@
 extends Node
 
 var current_clue = null
+var misses = 0
 
 func _process(_delta):
 	var cards = $"%Cards".get_children()
@@ -30,3 +31,8 @@ func _on_clue_pressed(clicked_clue):
 	for clue in $ClueContainer.get_children():
 		if clue != clicked_clue:
 			clue.reset()
+
+
+func _on_missed():
+	misses += 1
+	$"%Misses".text = str(misses)

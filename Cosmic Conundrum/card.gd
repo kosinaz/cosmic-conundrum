@@ -1,6 +1,8 @@
 tool
 extends CenterContainer
 
+signal missed
+
 export var id = 0
 export var start_id = 0
 export var direction = 0
@@ -22,3 +24,4 @@ func _on_sign_pressed(pressed_id):
 		front = false
 	else:
 		get_node("%Sign" + str(pressed_id)).disabled = true
+		emit_signal("missed")
